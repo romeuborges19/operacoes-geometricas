@@ -1,7 +1,20 @@
-def vertical_reflection(image):
-    height, width, channels = image.shape
-    reflected_image = np.zeros((height, width, channels), dtype=np.uint8)
-    for j in range(width):
-        for i in range(height):
-            reflected_image[i][j] = image[i][width - j - 1]
-    return reflected_image
+from operacao_aritmetica import OperacaoAritmetica
+from operacao_geometrica import Reflexao  
+from skimage.io import imread, imshow
+
+def main():
+
+    # arquivo_matriz = 'matriz.txt'
+    # op_aritmetica = OperacaoAritmetica(arquivo_matriz)
+    # matrizes_somadas, matrizes_subtraidas = op_aritmetica._operacao_aritmetica()
+    
+    img = imread('image.png')
+    op_geometrica = Reflexao(img)
+    img_refletida = op_geometrica._vertical_reflection()
+    
+
+    # arquivo_saida = 'matrizes.txt'
+    # interpolador.salvar_matrizes_em_arquivo(matrizes_reduzidas, matrizes_ampliadas, arquivo_saida)
+
+if __name__ == "__main__":
+    main()
