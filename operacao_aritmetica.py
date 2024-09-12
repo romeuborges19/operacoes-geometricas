@@ -30,7 +30,6 @@ class OperacaoAritmetica:
         return matrizes
 
     def __adicao(self):
-        print("soma: ", self.matrizes[0] + self.matrizes[1])
         return self.__verificar_tamanho_soma(self.matrizes[0] + self.matrizes[1])
     
     def __verificar_tamanho_soma(self, matriz_verificada):
